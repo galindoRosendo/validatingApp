@@ -34,3 +34,6 @@ CREATE TABLE registrotickets (
     REFERENCES validater.usuarios (idUsuario)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
+    
+#Registro de usuario
+INSERT INTO usuarios (nombre, apellido, username, correoElectronico, contrasenia) VALUES ('$nombre', '$apellido', '$usuario', '$email', '$contr');

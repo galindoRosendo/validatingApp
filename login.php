@@ -4,9 +4,9 @@ include_once("php/sql/dbCredentials.php");
 ?>
 
 <?php
-if(isset($_POST["email"])){
+if(isset($_POST["usuario"])){
 
-    $email = $_POST["email"];
+    $usuario = $_POST["usuario"];
     $password = $_POST["password"];
       // Crear conexion
     $conn = new mysqli(NOMBRE_HOST, USUARIO, CONTRASENA, BASE_DE_DATOS);
@@ -15,7 +15,7 @@ if(isset($_POST["email"])){
         die("Error de conexion: " . $conn->connect_error);
     }
 
-    $sql = "SELECT idUsuario, username, nombre, apellido, correoElectronico  FROM usuarios WHERE correoElectronico = '$email' AND contrasenia = '$password' ";
+    $sql = "SELECT idUsuario, username, nombre, apellido, correoElectronico  FROM usuarios WHERE username = '$usuario' AND contrasenia = '$password' ";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -40,7 +40,7 @@ if(isset($_POST["email"])){
 
 <div id="logInForm" class="formi" action="login.php" method="post">
   <form class="" action="login.php" method="post">
-    <input type="text" name="email" value="" placeholder="eMail">
+    <input type="text" name="usuario" value="" placeholder="Usuario">
 
     <input type="password" name="password" value="" placeholder="Contraseña">
 
@@ -49,7 +49,10 @@ if(isset($_POST["email"])){
 
 </div><!--logInForm-->
 
-
+<script type="text/javascript">
+$( "#linkhome" ).removeClass( "active" );
+$( "#linkuser" ).addClass( "active" );
+</script>
 <?php
 include("php/com/footer.php");
 ?>
