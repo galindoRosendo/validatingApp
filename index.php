@@ -7,7 +7,7 @@ include("php/com/header.php");
   <p>
    Página para registro de tickets.
   </p>
-
+  <i class="fa fa-ticket fa-5x" aria-hidden="true"></i>
 </div><!--container-->
 
 <?php

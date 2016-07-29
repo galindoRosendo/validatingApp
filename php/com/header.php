@@ -32,7 +32,7 @@ session_start();
     <div id=navbar>
       <ul>
         <li><a href="index.php" class="active" id="linkhome"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
-        <li><a href="request.php" id="linkrequest"><i class="fa fa-search" aria-hidden="true"></i> Peticion </a></li>
+        <li><a href="request.php" id="linkrequest"><i class="fa fa-exchange" aria-hidden="true"></i> Peticion </a></li>
         <?php echo $nav ?>
 
       </ul>
