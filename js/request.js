@@ -65,7 +65,10 @@ $("#btnSubmit").click(function(){
   if (ticket.length > 0 && importe.length > 0 && folio.length > 0 && fechaTicket.length > 0) {
     $.ajax({
     		data: parametros,
-    		url: "http://localhost:8080/validater.mx/php/ajax/validater.php",
+        /*Production*/
+        url: "http://churchs.com.mx/validater/php/ajax/validater.php",
+        /*Test*/
+    		//url: "http://localhost:8080/validater.mx/php/ajax/validater.php",
     		type:'POST',
     		success: function(result){
         $("#resultset").html(result);

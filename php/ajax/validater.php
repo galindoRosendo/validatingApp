@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 sleep (5);
 error_reporting(E_ALL ^ E_NOTICE);
 session_start();

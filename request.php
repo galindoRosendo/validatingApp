@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 include("php/com/header.php");
 include("php/sql/dbCredentials.php");
  ?>
@@ -8,7 +9,7 @@ include("php/sql/dbCredentials.php");
 echo "  <div id='queryForm' class='formi'>
     <form class='' >
 
-      <select id='cmbSucursal' class='selec' name='typeDate' onchange='muestra()'>
+      <select id='cmbSucursal' class='selec' name='typeDate'>
               <option value='LDO1'>	LDO1</option>
               <option value='LDO2'>	LDO2</option>
               <option value='LDO3'>	LDO3</option>

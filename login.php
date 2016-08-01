@@ -27,32 +27,31 @@ if(isset($_POST["usuario"])){
           $_SESSION["apellido"] =  $row["apellido"];
           $_SESSION["email"] =  $row["correoElectronico"];
         }
-          header("Location: index.php");
     } else {
         echo "0 results";
     }
     $conn->close();
-
+    header("Location: index.php");
 }else {
+  echo "
+  <div id='logInForm' class='formi' action='login.php' method='post'>
+    <form class='' action='login.php' method='post'>
+      <input type='text' name='usuario' value='' placeholder='Usuario'>
 
+      <input type='password' name='password' value='' placeholder='Clave'>
+
+      <input type='submit' name='btnIn' value='Ingresar'>
+    </form>
+
+  </div><!--logInForm-->
+
+  <script type='text/javascript'>
+  $( '#linkhome' ).removeClass( 'active' );
+  $( '#linkuser' ).addClass( 'active' );
+  </script>";
 }
  ?>
 
-<div id="logInForm" class="formi" action="login.php" method="post">
-  <form class="" action="login.php" method="post">
-    <input type="text" name="usuario" value="" placeholder="Usuario">
-
-    <input type="password" name="password" value="" placeholder="Contraseña">
-
-    <input type="submit" name="btnIn" value="Ingresar">
-  </form>
-
-</div><!--logInForm-->
-
-<script type="text/javascript">
-$( "#linkhome" ).removeClass( "active" );
-$( "#linkuser" ).addClass( "active" );
-</script>
 <?php
 include("php/com/footer.php");
 ?>
