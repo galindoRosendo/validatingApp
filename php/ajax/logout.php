@@ -13,3 +13,4 @@ echo "<div class='formi' id = 'response'>
             <h1><i class='fa fa-exclamation-triangle' aria-hidden='true'></i> Casi listo. </h1>
           </div>
         </div>";
+?>

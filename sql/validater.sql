@@ -1,9 +1,9 @@
 DROP DATABASE IF EXISTS validater;
 
 #test database validater
-CREATE DATABASE churchs_validater;
+CREATE DATABASE churchs_valticket;
 
-USE validater;
+USE churchs_valticket;
 
 CREATE TABLE usuarios
 (

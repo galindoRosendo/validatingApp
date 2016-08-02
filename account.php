@@ -1,13 +1,10 @@
 <?php
-include("php/com/header.php");
-include_once("php/sql/dbCredentials.php");
- ?>
+  include("php/com/header.php");
+  include_once("php/sql/dbCredentials.php");
 
-<?php
-
-          $username= $_SESSION["user"];
-          $nombreCompleto=$_SESSION["nombre"].' '.$_SESSION["apellido"];
-          $email=$_SESSION["email"];
+  $username= $_SESSION["user"];
+  $nombreCompleto=$_SESSION["nombre"].' '.$_SESSION["apellido"];
+  $email=$_SESSION["email"];
 
  ?>
 

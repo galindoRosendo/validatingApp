@@ -1,14 +1,14 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+include("../sql/dbCredentials.php");
 session_start();
 sleep (5);
-require_once("../sql/dbCredentials.php");
 if(isset($_POST["usuario"])){
 
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
-      // Crear conexion
+    // Crear conexion PHP > v5.3
     $conn = new mysqli(NOMBRE_HOST, USUARIO, CONTRASENA, BASE_DE_DATOS);
+
     // prueba
     if ($conn->connect_error) {
       die("<div class='formi'>
@@ -42,6 +42,7 @@ if(isset($_POST["usuario"])){
                   </div>
                 </div>";
     }
+    //cerrar conexion mysqli
     $conn->close();
 }else {
   echo "
