@@ -6,12 +6,16 @@ include("php/sql/dbCredentials.php");
 
  <?php
  if(isset($_SESSION["user"])){
+   //Apellido -> Sucursal y numero
+   $sucursal = $_SESSION['apellido'];
+   //usuario -> username[login]
    $usuario = $_SESSION['user'];
+
 echo "  <div id='queryForm' class='formi'>
     <form class='' >
 
       <select id='cmbSucursal' class='selec' name='typeDate'>
-              <option value='$usuario'> $usuario	</option>
+              <option value='$usuario'> $sucursal	</option>
       </select>
 
       <input id='importe' type='text' name='txtimporte' value='' placeholder='Monto $00.00' autocomplete='off' onkeypress='return onlyNumbersWithDot(event);'>

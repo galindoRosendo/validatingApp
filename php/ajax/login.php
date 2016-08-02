@@ -32,7 +32,9 @@ if(isset($_POST["usuario"])){
         while($row = $result->fetch_assoc()) {
           $_SESSION["idUsuario"] =  $row["idUsuario"];
           $_SESSION["user"] =  $row["username"];
+          //Marca-Region
           $_SESSION["nombre"] =  $row["nombre"];
+          //Sucursal
           $_SESSION["apellido"] =  $row["apellido"];
           $_SESSION["email"] =  $row["correoElectronico"];
         }
@@ -40,13 +42,21 @@ if(isset($_POST["usuario"])){
                   <div class='info'>
                     <h1><i class='fa fa-exclamation-triangle' aria-hidden='true'></i> Un momento porfavor. </h1>
                   </div>
-                </div>";
+                </div>
+                <script type='text/javascript'>
+                //Test
+                //setTimeout(function(){window.location='http://localhost:8080/validater.mx/';}, 3000);
+                //Production
+                setTimeout(function(){window.location='http://churchs.com.mx/validater/';}, 3000);
+                </script>
+                ";
     } else {
         echo "<div class='formi' id = 'response'>
                   <div class='warning'>
                     <h1><i class='fa fa-exclamation-triangle' aria-hidden='true'></i> Usuario o clave incorrectos. </h1>
                   </div>
-                </div>";
+                </div>
+                ";
     }
     //cerrar conexion mysqli
     $conn->close();
