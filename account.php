@@ -29,7 +29,7 @@
 
 </div>
 
-<script type="text/javascript" src='js/logout.js'>
+<script type="text/javascript" src='js/account.js'>
 
 </script>
  <?php

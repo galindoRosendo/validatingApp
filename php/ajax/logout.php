@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 session_start();
-sleep (5);
+sleep (3);
 unset($_SESSION["idUsuario"]);
 unset($_SESSION["user"]);
 unset($_SESSION["nombre"]);

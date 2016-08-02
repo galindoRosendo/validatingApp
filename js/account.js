@@ -1,3 +1,7 @@
+/*NavBar Color*/
+$("#linkhome").removeClass( "active" );
+$("#linkuser").addClass( "active" );
+
 /*hiden items*/
 $("#loadingcontainer").hide();
 
@@ -23,9 +27,9 @@ $("#btnOut").click(function(){
     $.ajax({
     		data: parametros,
         /*Production*/
-        url: "http://churchs.com.mx/validater/php/ajax/logout.php",
+        //url: "http://churchs.com.mx/validater/php/ajax/logout.php",
         /*Test*/
-    	  //url: "http://localhost:8080/validater.mx/php/ajax/logout.php",
+    	  url: "http://localhost:8080/validater.mx/php/ajax/logout.php",
     		type:'POST',
     		success: function(result){
         $("#resultset").html(result);

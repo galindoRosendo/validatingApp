@@ -4,8 +4,12 @@ session_start();
 sleep (5);
 if(isset($_POST["usuario"])){
 
-    $usuario = $_POST["usuario"];
-    $password = $_POST["password"];
+    //UserData Array
+    $logInParams = array(
+      'usuario' => $_POST["usuario"],
+      'password' => $_POST["password"]
+     );
+
     // Crear conexion PHP > v5.3
     $conn = new mysqli(NOMBRE_HOST, USUARIO, CONTRASENA, BASE_DE_DATOS);
 
@@ -18,7 +22,9 @@ if(isset($_POST["usuario"])){
           </div>");
     }
 
-    $sql = "SELECT idUsuario, username, nombre, apellido, correoElectronico  FROM usuarios WHERE username = '$usuario' AND contrasenia = '$password' ";
+    //query returned from sqlCredentials
+    $sql = queryLogIn($logInParams);
+
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

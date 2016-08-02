@@ -30,15 +30,17 @@ function onlyNumbersWithDot(e) {
 $(document).ajaxStart(function(){
     $("#loadingcontainer").css("display", "block");
     $("#response").css("display", "none");
+    $("#resultset").css("display", "none");
 });
 $(document).ajaxComplete(function(){
     $("#loadingcontainer").css("display", "none");
+    $("#resultset").css("display", "block");
     $("#response").css("display", "block");
-    $("#dateT").attr("value", "");
-    $("#timeT").attr("value", "");
-    $("#ticket").attr("value", "");
-    $("#importe").attr("value", "");
-    $("#folio").attr("value", "");
+    $("#dateT").val("");
+    $("#timeT").val("");
+    $("#ticket").val("");
+    $("#importe").val("");
+    $("#folio").val("");
 
 });
 
