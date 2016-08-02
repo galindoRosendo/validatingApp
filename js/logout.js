@@ -9,7 +9,10 @@ $(document).ajaxStart(function(){
 $(document).ajaxComplete(function(){
     $("#loadingcontainer").css("display", "none");
     $("#response").css("display", "block");
-    setTimeout(function(){window.location="http://localhost:8080/validater.mx/";}, 6000);
+    //Test
+    //setTimeout(function(){window.location="http://localhost:8080/validater.mx/";}, 3000);
+    //Production
+    setTimeout(function(){window.location="http://churchs.com.mx/validater/";}, 3000);
 });
 
 /*Function to request querys[AJAX]*/
@@ -20,9 +23,9 @@ $("#btnOut").click(function(){
     $.ajax({
     		data: parametros,
         /*Production*/
-        //url: "http://churchs.com.mx/validater/php/ajax/login.php",
+        url: "http://churchs.com.mx/validater/php/ajax/logout.php",
         /*Test*/
-    	  url: "http://localhost:8080/validater.mx/php/ajax/logout.php",
+    	  //url: "http://localhost:8080/validater.mx/php/ajax/logout.php",
     		type:'POST',
     		success: function(result){
         $("#resultset").html(result);
