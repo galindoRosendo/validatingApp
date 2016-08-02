@@ -1,57 +1,32 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 include("php/com/header.php");
 include_once("php/sql/dbCredentials.php");
 ?>
 
-<?php
-if(isset($_POST["usuario"])){
+ <div id='logInForm' class='formi' >
+   <form class='' >
+     <input id='txtusuario' type='text' name='usuario' value='' placeholder='Usuario'>
 
-    $usuario = $_POST["usuario"];
-    $password = $_POST["password"];
-      // Crear conexion
-    $conn = new mysqli(NOMBRE_HOST, USUARIO, CONTRASENA, BASE_DE_DATOS);
-    // prueba
-    if ($conn->connect_error) {
-        die("Error de conexion: " . $conn->connect_error);
-    }
+     <input id='txtpassword' type='password' name='password' value='' placeholder='Clave'>
 
-    $sql = "SELECT idUsuario, username, nombre, apellido, correoElectronico  FROM usuarios WHERE username = '$usuario' AND contrasenia = '$password' ";
-    $result = $conn->query($sql);
+     <input id='btnIn' type='button' name='btnIn' value='Ingresar'>
+   </form>
 
-    if ($result->num_rows > 0) {
+ </div><!--logInForm-->
 
-        while($row = $result->fetch_assoc()) {
-          $_SESSION["idUsuario"] =  $row["idUsuario"];
-          $_SESSION["user"] =  $row["username"];
-          $_SESSION["nombre"] =  $row["nombre"];
-          $_SESSION["apellido"] =  $row["apellido"];
-          $_SESSION["email"] =  $row["correoElectronico"];
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
-    header("Location: index.php");
-}else {
-  echo "
-  <div id='logInForm' class='formi' action='login.php' method='post'>
-    <form class='' action='login.php' method='post'>
-      <input type='text' name='usuario' value='' placeholder='Usuario'>
+ <div id="loadingcontainer" >
+     <div >
+       <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <h3>Confirmando...</h3>
+     </div>
+ </div>
+ <div class="formi" id="resultset">
 
-      <input type='password' name='password' value='' placeholder='Clave'>
+ </div>
 
-      <input type='submit' name='btnIn' value='Ingresar'>
-    </form>
+ <script type="text/javascript" src= "js/login.js">
 
-  </div><!--logInForm-->
-
-  <script type='text/javascript'>
-  $( '#linkhome' ).removeClass( 'active' );
-  $( '#linkuser' ).addClass( 'active' );
-  </script>";
-}
- ?>
-
+ </script>
 <?php
 include("php/com/footer.php");
 ?>

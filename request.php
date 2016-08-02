@@ -72,9 +72,9 @@ echo "
       <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <h3>Validando...</h3>
     </div>
 </div>
-  <div class="formi" id="resultset">
+<div class="formi" id="resultset">
 
-  </div>
+</div>
 <script type="text/javascript" src="js/request.js"></script>
 <script type="text/javascript">
 $( "#linkhome" ).removeClass( "active" );

@@ -60,7 +60,7 @@ $("#btnSubmit").click(function(){
     'ticket':ticket,
     'importe':importe,
     'sucursal':sucursal,
-    'folio':folio,
+    'folio':folio
   };
   if (ticket.length > 0 && importe.length > 0 && folio.length > 0 && fechaTicket.length > 0) {
     $.ajax({

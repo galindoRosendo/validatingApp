@@ -19,14 +19,22 @@ include_once("php/sql/dbCredentials.php");
 
      <input readonly type="text" name="correoElectronico" <?php echo " value='Email: ".$email."'"; ?>>
 
-    <a href="logout.php">Salir</a>
+     <input id='btnOut' type='button' name='btnOut' value='Salir'>
   </form>
 </div> <!--customerData>-->
 
-  <script type="text/javascript">
-  $( "#linkhome" ).removeClass( "active" );
-  $( "#linkuser" ).addClass( "active" );
-  </script>
+<div id="loadingcontainer">
+    <div >
+      <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <h3>Un momento porfavor...</h3>
+    </div>
+</div>
+<div class="formi" id="resultset">
+
+</div>
+
+<script type="text/javascript" src='js/logout.js'>
+
+</script>
  <?php
 include("php/com/footer.php");
   ?>
